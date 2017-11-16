@@ -32,6 +32,15 @@ function Sprite(images, parentObj, type) {
 	
 }
 
+Sprite.prototype.getWidth = function() {
+	return this.getActiveImage().width;
+};
+
+Sprite.prototype.getHeight = function() {
+	return this.getActiveImage().height;
+};
+
+
 Sprite.prototype.addImages = function(imageNames) {
 	for (var i = 0; i < imageNames.length; i++) {
 		var img = new Image();

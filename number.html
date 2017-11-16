@@ -1,0 +1,9 @@
+<h1>Random Number Generator That Runs Over And Over Every 1 Second</h1>
+<div id="number"></div>
+<script>
+var ele = document.querySelector('#number')
+var source = new EventSource('number.py');
+source.addEventListener('message', function(event) {
+	ele.innerHTML = event.data;
+});
+</script>
