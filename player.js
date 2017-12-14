@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	Game.init();
 	
-	var player = new Sprite(['person.png'], 'playing-area', 'player');
+	var player = new Sprite(['alien.png'], 'playing-area', 'player');
 	Game.addSprite(player);
 	
 	player.addKeyBinding(Game.KEY_D, function() {player.changeX(5)});

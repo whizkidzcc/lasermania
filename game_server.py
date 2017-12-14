@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+
 import random
 
 print('Content-type: text/event-stream')
@@ -8,8 +10,3 @@ print('retry: 1000')
 print('data: ' + str(random.randint(1, 100)))
 print()
 
-import random
-
-num = ((random.randint(1, 1000))
-print(str(num))
-       
