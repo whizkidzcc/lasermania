@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     	<meta charset="UTF-8">
+     	<title>Jacksay Example</title>
+    </head>
+
+    <body>
+         <h1>example of ajax</h1>
+		 <p id="number"></p>
+		 <p id="message"></p>
+
+         <script>
+		var ele = document.querySelector('#number')
+		var source = new EventSource('game_server.py');
+		source.addEventListener('message', function(event) {
+			ele.innerHTML = event.data;
+		});
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function() {
+         	if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
+        	document.querySelector('#message').innerHTML = this.responseText;
+        }
+         };
+
+         xhttp.open('POST', 'post.py');
+         xhttp.setRequestHeader('Content-Type', 'text/plain');
+         xhttp.send('{ "x": 1000, "y": 50}');
+		 
+         </script>
+    </body>
+</html>  

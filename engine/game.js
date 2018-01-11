@@ -100,13 +100,29 @@ document.addEventListener('DOMContentLoaded', function() {
 			//consoleMessage("alert", "Game loop not working.");
 		},
 		
+		overlapSprite: function(sprite) {
+			var rect = sprite.getRect();
+			
+			for (var i = 0; i < Game.sprites.length; i++) {
+				if (sprite !== Game.sprites[i]) {
+					var rect2 = Game.sprites[i].getRect();
+					
+					if (!(rect.right < rect2.left || rect2.right < rect2.left || rect.bottom < rect2.top || rect2.bottom < rect.top)) {
+						return Game.sprites[i];
+					}
+				}
+			}
+			
+			return null;
+		},
+		
 		handleKeyDown: function(event) {
-			console.log("Key Down is " + event.keyCode);
+			consoleMessage("info", "Key Down is " + event.keyCode);
 			Game.keyStatus[event.keyCode] = true;
 		},
 		
 		handleKeyUp: function(event) {
-			console.log("Key Up is " + event.keyCode);
+			consoleMessage("info", "Key Up is " + event.keyCode);
 			Game.keyStatus[event.keyCode] = undefined;
 		},
 		
@@ -123,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 		
 		loop: function() {
-			consoleMessage("info", "Game loop working");
+			//consoleMessage("info", "Game loop working");
 			for (var i = 0; i < Game.sprites.length; i++) {
 				Game.sprites[i].update();
 			}

@@ -28,6 +28,8 @@ function Sprite(images, parentObj, type) {
 		left: undefined,
 		right: undefined
 	};
+	this.collisionFunc = null;
+	this.moveFunc = null;
 	//this.speed = 1;
 	
 }
@@ -40,6 +42,14 @@ Sprite.prototype.getHeight = function() {
 	return this.getActiveImage().height;
 };
 
+Sprite.prototype.getRect = function() {
+	return {
+		left: this.x,
+		right: this.x + this.getWidth() - 1,
+		top: this.y,
+		bottom: this.y + this.getHeight() - 1
+	}
+}
 
 Sprite.prototype.addImages = function(imageNames) {
 	for (var i = 0; i < imageNames.length; i++) {
@@ -51,6 +61,14 @@ Sprite.prototype.addImages = function(imageNames) {
 	}
 };
 
+Sprite.prototype.onCollision = function(func) {
+	this.collisionFunc = func;
+	//.collisionFunc = func;
+}
+
+Sprite.prototype.onMove = function(func) {
+	this.moveFunc = func;
+}
 
 Sprite.prototype.getActiveImage = function() {
 	return this.images[this.activeImage];
@@ -131,5 +149,17 @@ Sprite.prototype.update = function() {
 	if (this.autoMoveX !== 0 || this.autoMoveY !== 0) {
 		this.changeX(this.autoMoveX);
 		this.changeY(this.autoMoveY);
+	}
+	
+	if (this.moveFunc !== null && (this.autoMoveX !== 0 || this.autoMoveY !== 0)) {
+		this.moveFunc(this.x, this.y);
+	}
+	
+	if (this.collisionFunc !== null) {
+		var overlapSprite = Game.overlapSprite(this);
+		if (overlapSprite !== null) {
+			//console.log(overlapSprite);
+			this.collisionFunc(overlapSprite);
+		}
 	}
 };
