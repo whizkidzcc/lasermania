@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var player = new Sprite(['person.png'], 'playing-area', 'player');
 	Game.addSprite(player);
         
-        var player2 = new Sprite(['person.bmp'], 'playing-area', 'player2');
+        var player2 = new Sprite(['person2.png'], 'playing-area', 'player2');
 	Game.addSprite(player2);
 	
 	player.addKeyBinding(Game.KEY_D, function() {player.changeX(5)});
