@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Lasermania v1.0</title>
-                <link rel="icon" href="lasermania.png" type="image/gif" sizes="16x16">
 		<style>
 			#score {
 				font-family: monospace;
@@ -11,40 +10,33 @@
 				color: red;
 			}
 			
+			#message {
+				font-family: monospace;
+				font-size: 25px;
+				color: red;
+			}
+			
 			#playing-area {
-				width: 100%px;
-				height: 100%px;
+				width: 1366px;
+				height: 768px;
 				position: relative;
 				margin: auto;
 				background-color: #222222;
 			}
 			
-			#pause-div {
-            
-            }
-            
-            #pause {
-                font-size: 40px;
-                font-family: monospace;
-                color:  orangered;
-                background-color: greenyellow;
-            }
-			
 			body {
-				overflow: hidden
-			}                       
-                       
+				overflow: hidden;
+			}
 		</style>
-          </head>
+	</head>
 	<body oncontextmenu="return false;" style="background-color:black">
 		<div id="playing-area">
 			<p id="score">SCORE:</p>
+			<p id="message"></p>
 		</div>
-		<div id="pause-div">z   
-                    <a href="Start.html"><button id="pause"> ||	</button></a>
-        </div>
 		<script src="engine/game.js"></script>
 		<script src="engine/sprite.js"></script>
+		<script src="post_player.js"></script>
 		<script src="player.js"></script>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!C:/Users/Benjamin/AppData/Local/Programs/Python/Python36-32/python.exe
 
 import json
 import random
@@ -9,8 +9,7 @@ print('Cache-Control: no-cache');
 print()
 
 text = sys.stdin.readline()
-
+print(text)
 pos = json.loads(text)
-name = list(pos) [0]
-                
-print (name, pos[name]['x'], pos[name]['y'])
+
+print(pos['x'], pos['y'], 'hello')
