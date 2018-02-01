@@ -79,12 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 		
 		handleKeyDown: function(event) {
-			console.log("Key Down is " + event.keyCode);
+			//console.log("Key Down is " + event.keyCode);
 			Game.keyStatus[event.keyCode] = true;
 		},
 		
 		handleKeyUp: function(event) {
-			console.log("Key Up is " + event.keyCode);
+			//console.log("Key Up is " + event.keyCode);
 			Game.keyStatus[event.keyCode] = undefined;
 		},
 		
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 		
 		loop: function() {
-			consoleMessage("info", "Game loop working");
+			//consoleMessage("info", "Game loop working");
 			for (var i = 0; i < Game.sprites.length; i++) {
 				Game.sprites[i].update();
 			}
