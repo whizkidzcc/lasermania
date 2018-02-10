@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		} else {
 			player.changeY(changeBy);
 		}
-		postData('RandomGuy', player.x, player.y);
+		postData(localStorage.getItem("username"), player.x, player.y);
 	}
 	player.setBoundary(0, 768, 0, 1366);
 	initWebSocket();
