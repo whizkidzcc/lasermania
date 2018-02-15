@@ -2,6 +2,7 @@
 <html>
     <head>
      	<meta charset="UTF-8">
+<<<<<<< HEAD
      	<title>Jacksay Example</title>
     </head>
 
@@ -20,13 +21,39 @@
          xhttp.onreadystatechange = function() {
          	if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
         	document.querySelector('#message').innerHTML = this.responseText;
+=======
+     	<title>AJAX EXAMPLE </title>
+    </head>
+
+    <body>
+         <h1>AJAX EXAMPLE</h1>
+         <p id="number"></p>
+         <p id="message"></p>
+
+         <script>
+         var ele = document.querySelector('#number');
+           var source = new EventSource ('game_server.py');
+           source.addEventListener('message', function(event) {
+               ele.innerHTML = event.data;
+          });
+
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function() {
+         	if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
+
+            document.querySelector('#message').innerHTML = this.responseText;
+>>>>>>> refs/remotes/origin/master
         }
          };
 
          xhttp.open('POST', 'post.py');
          xhttp.setRequestHeader('Content-Type', 'text/plain');
+<<<<<<< HEAD
          xhttp.send('{ "x": 1000, "y": 50}');
 		 
+=======
+         xhttp.send('{ "eric": {"x": 100, "y" :50 }} ');
+>>>>>>> refs/remotes/origin/master
          </script>
     </body>
 </html>  

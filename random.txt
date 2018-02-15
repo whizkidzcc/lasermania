@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Hi tandom ntottufmsd paewjiif pioajw pefoijazewpfoijaewpofijaiejfoaiwe jpf 42,000
+=======
+HEllo there! The random number is 42.
+>>>>>>> refs/remotes/origin/master

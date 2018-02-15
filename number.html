@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Random Number Generator That Runs Over And Over Every 1 Second</h1>
 <div id="number"></div>
 <script>
@@ -7,3 +8,30 @@ source.addEventListener('message', function(event) {
 	ele.innerHTML = event.data;
 });
 </script>
+=======
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Random Number Per Second</div>
+        <p id="number"></p>
+        
+        <script>
+           var ele = document.querySelector('#number');
+           var source = new EventSource ('number.py');
+           source.addEventListener('message', function(event) {
+               ele.innerHTMl = event.data;
+           });
+        </script>
+    </body>
+</html>
+>>>>>>> refs/remotes/origin/master

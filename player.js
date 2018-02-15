@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	var player = new Sprite(['person.png'], 'playing-area', 'player');
 	Game.addSprite(player);
+        
+        var player2 = new Sprite(['person2.png'], 'playing-area', 'player2');
+	Game.addSprite(player2);
 	
 	/*
 	var superman = new Sprite(['person.png'], 'playing-area', 'superman');
@@ -27,4 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	player.setBoundary(0, 768, 0, 1366);
 	Game.start();
+        
+        player2.addKeyBinding(Game.KEY_L, function() {player2.changeX(5)});
+	player2.addKeyBinding(Game.KEY_J, function() {player2.changeX(-5)});
+	player2.addKeyBinding(Game.KEY_I, function() {player2.changeY(-5)});
+	player2.addKeyBinding(Game.KEY_K, function() {player2.changeY(5)});
+	player2.setBoundary(0, 768, 0, 1366);
+	Game.start();
+        
+        
 });

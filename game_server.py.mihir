@@ -1,0 +1,7 @@
+#!C:\Users\Mihir\AppData\Local\Programs\Python\Python36-32\python
+print('Content-type: text/plain')
+print('Cache-Control: no cache')
+print()
+
+print('retry: 1000')
+print('data: '

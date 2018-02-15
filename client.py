@@ -8,4 +8,8 @@ async def hello(uri):
         await websocket.send("Hello world!")
 
 asyncio.get_event_loop().run_until_complete(
+<<<<<<< HEAD
     hello('ws://localhost:8765'))
+=======
+    hello('ws://localhost:8765'))
+>>>>>>> refs/remotes/origin/master
