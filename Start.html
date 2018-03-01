@@ -12,55 +12,63 @@ and open the template in the editor.
         <link rel="icon" href="lasermania.png" type="image/gif" sizes="16x16">
         <style>
 
-            body {
-                background-color: black;
-            }
-            
+			body {
+				background-color: black;
+			}
+			
 
-            h1{color: orangered;
-               background-color:blue;
-               text-align: center;
-               font-size: 50px;  
-              }
+			h1 {
+				color: orangered;
+				background-color:blue;
+				text-align: center;
+				font-size: 50px;  
+			}
 
 			  
-			h2 {color: orangered;
-			   background-color:blue;
-			   text-align: center;
-			   font-size: 50px;
-			 }
+			h2 {
+				color: orangered;
+				background-color:blue;
+				text-align: center;
+				font-size: 50px;
+			}
 			 
-			 #start-div {
-			  text-align: center; 
-			  font-size: 30px;
+			#start-div {
+				text-align: center; 
+				font-size: 30px;
+			}
+			  
+			
+			#singleplayer-div {
+				text-align: center;
+			}
+			  
+			#singleplayer {                
+				font-size:  40px;
+			}
 
-			  }
-			  
-            
-              #singleplayer-div {
-                  text-align: center;
-              }
-              
-              #singleplayer {                
-                  font-size:  40px;
-              }
-		
-              #multiplayer-div {
-                  text-align: center;
-              }
-              
-              #multiplayer {
-                  font-size: 40px; 
-              }
-              
-              #back-div {
-                  text-align: center;
-              }
-              
-              #back {
-                  font-size: 30px;
-              }
-			  
+			#multiplayer-div {
+				text-align: center;
+			}
+
+			#multiplayer {
+				font-size: 40px; 
+			}
+
+			#back-div {
+				text-align: center;
+			}
+
+			#back {
+				font-size: 30px;
+			}
+
+			.center {
+				text-align: center;
+			}
+			
+			.select {
+				background-color: white;
+			}
         </style>
 		<link rel="stylesheet" href="style.css">
     </head>
@@ -68,7 +76,7 @@ and open the template in the editor.
         <h1>Lasermania</h1>
         
         <div id="singleplayer-div">
-           <a href="game.html"><button id="singleplayer">Singleplayer</button></a>
+           <a href="game.html" onclick="saveCharacter()"><button id="singleplayer">Singleplayer</button></a>
         </div>
         
         <div id="multiplayer-div">
@@ -77,14 +85,33 @@ and open the template in the editor.
         
         <div id="back-div">
             <a href="index.html"><button id ="back">Back</button></a>
-			
-			<P align = center>
-			<img src="person.gif" alt= "Person 1" height = "300" width = "200">
-			</P>
-			
-			<P align = center>
-			<img src="person2.gif" alt= "Person 2" height = "300" width = "200">
-			</P>
+		</div>
 
+		<p class="center">
+			<img src="person.gif" alt="name1" onclick="selectCharacter(this)" height="200" width="200" class="select">
+			<img src="person2.gif" alt="name2" onclick="selectCharacter(this)" height="200" width="200">
+			<img src="person3.gif" alt="name3" onclick="selectCharacter(this)" height="200" width="200">
+			<img src="person4.gif" alt="name4" onclick="selectCharacter(this)" height="200" width="200">
+		</p>
+
+		<p class="center">
+			<input type="text" value="Alice" id="name1">
+			<input type="text" value="Bob" id="name2">
+			<input type="text" value="Cheryl" id="name3">
+			<input type="text" value="David" id="name4">
+		</p>
+	<script>
+		function selectCharacter(obj) {
+			var select = document.querySelector(".select");
+			select.classList.remove("select");
+			obj.classList.add("select");
+		}
+		
+		function saveCharacter() {
+			var select = document.querySelector(".select");
+			var name = document.getElementById(select.alt).value;
+			localStorage.setItem("username", name);
+		}
+	</script>
     </body>
 </html>

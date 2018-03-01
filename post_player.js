@@ -1,32 +1,26 @@
 var ws;
+var players = {};
 
 function initWebSocket() {
-        ws = new Websocket ("ws://127.0.0.1:5678/");
-        ws.onmessage = function(event) {
-                console.log(event.data);
-        };
-}
-function postplayer(name) {
-var xhttp = new XMLHttpRequest();
-         xhttp.onreadystatechange = function() {
-         	if (this.readyState == XMLHttpRequest.DONE && this.status === 200) {
-        	alert(this.responseText);
+	ws = new WebSocket("ws://127.0.0.1:5678");
+	ws.onmessage = function(event) {
+		var data = JSON.parse(event.data);
+		var name = Object.keys(data)[0];
+		var p;
+		if (!(name in players)) {
+			p = new Sprite(['person.png'], 'playing-area', 'player');
+			Game.addSprite(p);
+			players[name] = p;
+		}
 
-        	document.querySelector('#message').innerHTML = this.responseText
-        }
-         };
-
-         xhttp.open('POST', 'post.py');
-         xhttp.setRequestHeader('Content-Type', 'text/plain');
-
-         data = [];
-         data [name] = { 'x': x, 'y': y }
-         xhttp.send(JSON.stringify(data));
-         consolelog(JSON.stringify(data));
+		p = players[name];
+		p.setPosition (data[name]['x'], data[name]['y']);
+	};
 }
 
-function postData(ws, name, x, y) {
-        var data = {};
-        data[name] = {"x": x "y": y};
-        ws.send(JSON.stringify(data));
+
+function postData(name, x, y) {
+	var data = {};
+	data[name] = {'x': x, 'y': y};
+	ws.send(JSON.stringify(data));
 }

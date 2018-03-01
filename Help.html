@@ -10,11 +10,13 @@
             h1 {
                 color: orangered;
                 text-align: center;
-                background-color: yellow;
+                background-color: blue;
+				font-size: 48px;
             }
             
             body {
                 background-color: black;
+				font-family: Arial, Helvetica, sans-serif;
             }
             
             h2 {
@@ -29,22 +31,29 @@
                 font-size: 30px;
             }
             
-            #menu {
-                font-size: 20px;
-            }
-            
             h4{
                 font-size: 50px;
                 color: crimson;
                 text-align: center;
             }
+			
+			#menu {
+			    text-decoration: none;
+				color: orangered;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 40px;
+				background-color: #444444;
+				border: 2px solid white;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
         </style>
     </head>
     <body>
         
-        <h1> Help and Controls
-           
-        </h1>
+        <h1> Help and Controls</h1>
         <h2> Use your arrow keys to attack! </h2>
         
         <h3> Default keys: <br>
@@ -52,13 +61,14 @@
              A: Go left <br>
              S: Go down <br>
              D: Go right <br>
-             Space bar: Laser Attack <br>
+             Left click: Laser Attack <br>
              Right click: Shield <br>
+             Space bar: Special Move <br>
         </h3>
         
         <h4>Have fun fighting!</h4>
         
         <h2> 
-            <a href="index.html"><button id="menu"> Menu </button></a>
+            <a id="menu" href="index.html">Menu</a>
     </body>
 </html>
