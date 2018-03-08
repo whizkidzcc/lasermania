@@ -80,7 +80,7 @@ and open the template in the editor.
         </div>
         
         <div id="multiplayer-div">
-            <button id="multiplayer">Multiplayer [In development]</button>
+			<a href="game.html" onclick="saveCharacter()"><button id="singleplayer">Multiplayer</button></a>
         </div>
         
         <div id="back-div">
@@ -100,6 +100,7 @@ and open the template in the editor.
 			<input type="text" value="Cheryl" id="name3">
 			<input type="text" value="David" id="name4">
 		</p>
+
 	<script>
 		function selectCharacter(obj) {
 			var select = document.querySelector(".select");
@@ -111,6 +112,7 @@ and open the template in the editor.
 			var select = document.querySelector(".select");
 			var name = document.getElementById(select.alt).value;
 			localStorage.setItem("username", name);
+			localStorage.setItem("image", select.src);
 		}
 	</script>
     </body>

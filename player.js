@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	Game.init();
 	
-	var player = new Sprite(['person.png'], 'playing-area', 'player');
+	var player = new Sprite([localStorage.getItem('image')], 'playing-area', 'player');
 	Game.addSprite(player);
+	players[localStorage.getItem('username')] = player;
 	
 	/*
 	var superman = new Sprite(['person.png'], 'playing-area', 'superman');
@@ -29,3 +30,4 @@ document.addEventListener('DOMContentLoaded', function() {
 	initWebSocket();
 	Game.start();
 });
+
