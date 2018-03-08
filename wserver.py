@@ -1,23 +1,22 @@
-#!C:/Users/Benjamin/AppData/Local/Programs/Python/Python36-32/python.exe
-print('test')
+#!C:/Python36/python
 
 import asyncio
 import datetime
 import random
 import websockets
-#data structure to keep track(people who are connected)
-# |
-# V
+
+# Keep track of users
 connected = set()
+
 async def handle_player(websocket, path):
     connected.add(websocket)
     print('Connected to ws: ' + str(len(connected)) + ' connections')
-    
+
     try:
         while True:
             data = await websocket.recv()
             await websocket.send(data)
-            
+
             for ws in connected:
                 await ws.send(data)
     except:
