@@ -107,6 +107,7 @@ and open the template in the editor.
                 var selectedObj = document.querySelector('.selected');
                 var name = document.getElementById(selectedObj.alt).value;
                 localStorage.setItem('username', name);
+                localStorage.setItem('image', selectedObj.src);
             }
         </script>
     </body>

@@ -8,18 +8,19 @@ function initWebSocket() {
             var name = Object.keys(data)[0];
             var p;
             if (!(name in players)) {
-                p = new Sprite(['person.png'], 'playing-area', 'player');
+                p = new Sprite([data[name]['image']], 'playing-area', 'player');
                 Game.addSprite(p);
                 players[name] = p;
             }
             
             p = players[name];
+            console.log(name + "," + data[name]['x']);
             p.setPosition(data[name]['x'], data[name]['y']);
 	};
 }
 
 function postData(name, x, y) {
 	var data = {};
-	data[name] = {'x': x, 'y': y};
+	data[name] = {'x': x, 'y': y, 'image': localStorage.getItem('image')};
 	ws.send(JSON.stringify(data));
 }

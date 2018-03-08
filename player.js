@@ -1,16 +1,10 @@
 // Player in the lasermania game
 document.addEventListener('DOMContentLoaded', function() {
-	
 	Game.init();
 	
-	var player = new Sprite(['person.png'], 'playing-area', 'player');
+	var player = new Sprite([localStorage.getItem('image')], 'playing-area', 'player');
 	Game.addSprite(player);
-	
-	/*
-	var superman = new Sprite(['person.png'], 'playing-area', 'superman');
-	Game.addSprite(superman);
-	*/
-
+        players[localStorage.getItem('username')] = player;
 	
 	player.addKeyBinding(Game.KEY_D, function() {moveyMovey(5, "x")});
 	player.addKeyBinding(Game.KEY_A, function() {moveyMovey(-5, "x")});
