@@ -1,0 +1,42 @@
+~/Apache/htdocs/www/lasermania:598:$ ls -l
+total 85
+-rw-rw-rw-   1 user     group        1947 Feb  7 11:42 Help.html
+-rw-rw-rw-   1 user     group          12 Jan 24 02:39 README.md
+-rw-rw-rw-   1 user     group        3612 Mar  7 20:56 Start.html
+-rw-rw-rw-   1 user     group         942 Jan 24 02:39 ajax.html
+-rw-rw-rw-   1 user     group         491 Jan 24 02:39 ajax.html.save
+-rw-rw-rw-   1 user     group       26646 Feb  7 11:42 alien.png
+-rw-rw-rw-   1 user     group         794 Mar  7 20:54 client.html
+-rw-rw-rw-   1 user     group         257 Jan 24 02:39 client.py
+drwxrwxrwx   1 user     group           0 Feb  7 11:42 engine
+drwxrwxrwx   1 user     group           0 Mar  7 21:11 examples
+-rw-rw-rw-   1 user     group         875 Feb  7 11:42 game.html
+-rw-rw-rw-   1 user     group         276 Mar  7 20:56 game_server.py
+-rw-rw-rw-   1 user     group        1993 Feb  7 11:42 index.html
+-rw-rw-rw-   1 user     group         228 Jan 24 02:39 laser.png
+-rw-rw-rw-   1 user     group         533 Jan 24 02:39 lasermania.png
+-rw-rw-rw-   1 user     group         757 Jan 24 02:39 number.html
+-rw-rw-rw-   1 user     group         314 Jan 24 02:39 number.py
+-rw-rw-rw-   1 user     group       19078 Jan 24 02:39 person.bmp
+-rw-rw-rw-   1 user     group        1514 Feb  7 11:42 person.gif
+-rw-rw-rw-   1 user     group        1652 Jan 24 02:39 person2.gif
+-rw-rw-rw-   1 user     group        1503 Feb  7 11:42 person3.gif
+-rw-rw-rw-   1 user     group        1503 Feb  7 11:42 person4.gif
+-rw-rw-rw-   1 user     group          21 Mar  7 20:56 phpinfo.php
+-rw-rw-rw-   1 user     group         842 Mar  7 20:56 player.js
+-rw-rw-rw-   1 user     group         272 Mar  7 20:56 post.py
+-rw-rw-rw-   1 user     group         593 Mar  7 20:56 post_player-sl.js
+-rw-rw-rw-   1 user     group         791 Mar  7 20:56 post_player.js
+-rw-rw-rw-   1 user     group          37 Jan 24 02:39 random.txt
+-rw-rw-rw-   1 user     group         296 Jan 24 02:39 server.py
+-rw-rw-rw-   1 user     group        1512 Jan 24 02:39 stop
+-rw-rw-rw-   1 user     group          33 Jan 24 02:39 style.css
+drwxrwxrwx   1 user     group           0 Mar  7 20:56 tmp
+-rw-rw-rw-   1 user     group         540 Feb  7 11:42 wclient.html
+drwxrwxrwx   1 user     group           0 Jan 24 17:39 ws
+-rw-rw-rw-   1 user     group         891 Mar  7 20:56 wserver.py
+~/Apache/htdocs/www/lasermania:599:$ ls -l examples
+total 3
+-rw-rw-rw-   1 user     group          93 Mar  7 20:56 hello.py
+-rw-rw-rw-   1 user     group         220 Jan 24 02:39 rnd.html
+-rw-rw-rw-   1 user     group         361 Mar  7 20:56 rnd.py

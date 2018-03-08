@@ -1,9 +1,8 @@
 /*
  * post_player.js
- * 
+ *
  * Let the server know your state.
  */
-
 
 function postPlayer(name, x, y) {
     var xhttp = new XMLHttpRequest();
@@ -20,5 +19,4 @@ function postPlayer(name, x, y) {
     data = [];
     data[name] = { 'x': x, 'y': y };
     xhttp.send(data);
-    //xhttp.send('{ "eric": {"x": 100, "y" :50 }} ');
 }

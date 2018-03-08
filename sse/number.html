@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Random Number Per Second</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>Random Number Per Second</div>
+        <h1>Random Number Per Second</h1>
         <p id="number"></p>
-        
+
         <script>
            var ele = document.querySelector('#number');
-           var source = new EventSource ('number.py');
+           var source = new EventSource('number.py');
            source.addEventListener('message', function(event) {
-               ele.innerHTMl = event.data;
+               ele.innerHTML = event.data;
            });
         </script>
     </body>

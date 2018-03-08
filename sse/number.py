@@ -1,4 +1,4 @@
-#!C:\Users\Mihir\AppData\Local\Programs\Python\Python36-32/python
+#!C:/Python36/python
 
 import random
 
@@ -9,9 +9,3 @@ print()
 print('retry: 1000')
 print('data: ' + str(random.randint(1, 100)))
 print()
-
-import random
-
-num = ((random.randint(1, 1000))
-print(str(num))
-       
